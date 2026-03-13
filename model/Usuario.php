@@ -2,7 +2,7 @@
   namespace OrganizacaoTarefas\model;
 
 
-  class Cadastro {
+  class Usuario {
 
 
     private int $codigo;
