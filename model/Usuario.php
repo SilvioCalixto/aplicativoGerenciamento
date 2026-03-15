@@ -24,11 +24,11 @@
      }
 
      public function __get(string $dado): mixed {
-      return $this->dado;
+      return $this->$dado;
      }
 
      public function __set(string $variavel, string $novoDado): void {
-      $this->variavel = $novoDado;
+      $this->$variavel = $novoDado;
      }
 
      public function imprimir(): string {

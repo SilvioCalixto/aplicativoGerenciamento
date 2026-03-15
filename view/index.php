@@ -13,7 +13,7 @@
   <h1>Bem Vindo ao Organizador de Tarefas.</h1>
   
 
-  <form action="POST">
+  <form method="POST">
   <h3>Faça seu Login ou Cadastre-se!</h3>
     <label>Nome de Usuário:</label>
     <input type="text" name="name" id="name">

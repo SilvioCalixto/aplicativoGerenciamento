@@ -35,17 +35,17 @@
   </form>
   <?php 
   
-    try{
-        $codigo           = $_POST['codigo'];
-        $nome             = $_POST['nome'];
-        $email            = $_POST['email'];
-        $senha            = $_POST['senha'];
+    if($_POST){
 
-        $usuario = new Usuario($codigo, $nome, $email, $senha);
-    }catch(Except $erro){
-      echo "Algo de errado!!!<br> $erro";
-    }
-    header('location:index.php')
+   $codigo = $_POST['codigo'];
+   $nome = $_POST['nome'];
+   $email = $_POST['email'];
+   $senha = $_POST['senha'];
+
+   $usuario = new Usuario($codigo,$nome,$email,$senha);
+
+   header("Location: index.php");
+}
   ?>  
     <h3>
       <?php

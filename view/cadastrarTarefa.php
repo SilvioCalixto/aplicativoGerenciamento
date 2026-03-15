@@ -18,7 +18,7 @@ use OrganizacaoTarefas\model\Tarefa;
 </head>
 <body>
   <h1>Cadastrar Tarefa</h1>
-  <form action="" method="POST">
+  <form method="POST">
     <label>Digite Sua Tarefa: </label>
     <input type="text" name="tarefa" id="tarefa">
     <br>
@@ -41,6 +41,7 @@ use OrganizacaoTarefas\model\Tarefa;
     </div>
   </form>
    <?php
+    session_start();
     try{
 
       $tarefa =$_POST['tarefa'];
@@ -49,6 +50,7 @@ use OrganizacaoTarefas\model\Tarefa;
       $lembrete =$_POST['lembrete'];
 
       $entradaTarefa =  new Tarefa($tarefa,$prioridade,$prazo,$lembrete);
+      $_SESSION['tarefas'][] = $entradaTarefa;
 
       
     }catch(Exception $erro){
