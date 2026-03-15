@@ -8,19 +8,24 @@ class Tarefa
   private string $prioridade;
   private string $prazo;
   private string $lembrete;
+  private int $usuarioCodigo;
+  private bool $concluida;
 
   public function __construct(
     string $tarefa,
     string $prioridade,
     string $prazo,
-    string $lembrete
+    string $lembrete,
+    int $usuarioCodigo,
   ) {
 
 
-    $this->tarefa       = $tarefa;
-    $this->prioridade  = $prioridade;
-    $this->prazo       = $prazo;
-    $this->lembrete    = $lembrete;
+    $this->tarefa        = $tarefa;
+    $this->prioridade    = $prioridade;
+    $this->prazo         = $prazo;
+    $this->lembrete      = $lembrete;
+    $this->usuarioCodigo = $usuarioCodigo;
+    $this->concluida = false;
   }
 
   public function __get(string $dado): mixed
@@ -35,11 +40,26 @@ class Tarefa
 
   public function imprimir(): string
   {
+    $status = $this->concluida ? "Concluída" : "Pendente";
 
-    return  "<br>Tarefa: " .$this->tarefa.
-      "<br>Prioridade: " .$this->prioridade.
-      "<br>Prazo: " .$this->prazo.
-      "<br>Lembrete: " .$this->lembrete;
+    $corPrazo = "black";
+
+    if($this->prioridade == "alto") {
+      $corPrazo = "red";
+    }
+    else if($this->prioridade == "medio") {
+      $corPrazo = "yellow";
+    }else {
+      $corPrazo = "green";
+    }
+
+
+    return "<br><strong>Tarefa:</strong> ".$this->tarefa.
+       "<br><strong>Prioridade:</strong> <span style ='color:$corPrazo'>".$this->prioridade."</span>".
+       "<br><strong>Prazo:</strong> ".$this->prazo.
+       "<br><strong>Lembrete:</strong> ".$this->lembrete.
+       "<br><strong>Usuário:</strong> ".$this->usuarioCodigo.
+       "<br><strong>Status:</strong> ".$status;
   }
 }
 ?>

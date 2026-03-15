@@ -31,12 +31,18 @@
       $this->$variavel = $novoDado;
      }
 
+     public function verificarSenha(string $senhaDigitada): bool {
+      return $senhaDigitada === $this->senha;
+}
+
      public function imprimir(): string {
-        return "<br>Código: ".$this->codigo.
-               "<br>Nome: ".$this->nome.
-               "<br>E-mail: ".$this->email.
-               "<br>Senha: ".$this->senha;
+        return "<br><strong>Código:</strong> ".$this->codigo.
+               "<br><strong>Nome:</strong> ".$this->nome.
+               "<br><strong>E-mail:</strong> ".$this->email.
+               "<br><strong>Senha:</strong> ".$this->senha;
      }
+
+     
   }
 
 ?>

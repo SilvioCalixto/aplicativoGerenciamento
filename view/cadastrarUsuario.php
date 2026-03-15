@@ -2,7 +2,11 @@
   namespace OrganizacaoTarefas\view;
   require_once("../model/Usuario.php");
 
+  session_start();
+
   use OrganizacaoTarefas\model\Usuario;
+
+  
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -23,7 +27,7 @@
       <input type="text" name="nome" id="nome">
       <br>
       <label>E-mail: </label>
-      <input type="string" name="email" id="email">
+      <input type="email" name="email" id="email">
       <br>
       <label>Senha: </label>
       <input type="password" name="senha" id="senha">
@@ -33,25 +37,25 @@
         <button><a href="index.php">Voltar</a></button>
       </div>
   </form>
-  <?php 
-  
-    if($_POST){
+  <?php
 
-   $codigo = $_POST['codigo'];
-   $nome = $_POST['nome'];
-   $email = $_POST['email'];
-   $senha = $_POST['senha'];
+      if($_POST){
 
-   $usuario = new Usuario($codigo,$nome,$email,$senha);
+          $codigo = $_POST['codigo'];
+          $nome = $_POST['nome'];
+          $email = $_POST['email'];
+          $senha = $_POST['senha'];
 
-   header("Location: index.php");
-}
-  ?>  
-    <h3>
-      <?php
-         echo $usuario->imprimir();
-      ?>
-    </h3>
+          $usuario = new Usuario($codigo,$nome,$email,$senha);
+
+          $_SESSION['usuarios'][] = $usuario;
+
+          echo $usuario->imprimir();
+
+      }
+
+?>
+
 
   
 </body>

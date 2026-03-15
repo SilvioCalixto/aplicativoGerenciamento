@@ -13,9 +13,9 @@
   <h1>Organize Suas Tarefas</h1>
   <div class="container">
   <button class="but"><a href="cadastrarTarefa.php">Cadastrar</a></button>
-  <button class="but"><a href="">Consultar</a></button>
-  <button class="but"><a href="">Atualizar</a></button>
-  <button class="but"><a href="">Excluir</a></button>
+  <button class="but"><a href="consultarTarefa.php">Consultar</a></button>
+  <button class="but"><a href="atualizarTarefa.php">Atualizar</a></button>
+  <button class="but"><a href="deletarTarefa.php">Excluir</a></button>
   <button class="but"><a href="index.php">Sair</a></button>
   </div>
   

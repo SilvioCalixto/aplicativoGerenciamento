@@ -1,7 +1,10 @@
 <?php
 namespace OrganizacaoTarefas\view;
+
 require_once("../model/Usuario.php");
 require_once("../model/Tarefa.php");
+
+session_start();
 
 use Exception;
 use OrganizacaoTarefas\model\Usuario;
@@ -19,20 +22,20 @@ use OrganizacaoTarefas\model\Tarefa;
 <body>
   <h1>Cadastrar Tarefa</h1>
   <form method="POST">
-    <label>Digite Sua Tarefa: </label>
+    <label>Descreva Sua Tarefa: </label>
     <input type="text" name="tarefa" id="tarefa">
     <br>
-    <label>Qual O Nivel de Prioridade Da Sua Tarefa?: </label>
+    <label>Qual O Nivel de Prioridade?: </label>
     <select name="prioridade" id="prioridade">
       <option value="baixo">Baixo</option>
       <option value="medio">Médio</option>
       <option value="alto">Alto</option>
     </select>
     <br>
-    <label>Quantos dias para a conclusão da tarefa?: </label>
+    <label>Quantos dias para a conclusão?: </label>
     <input type="date" name="prazo" id="prazo">
     <br>
-    <label>Quando gostaria de ser lembrado da sua Tarefa: </label>
+    <label>Quando gostaria de ser lembrado?: </label>
     <input type="datetime-local" name="lembrete" id="lembrete">
     <br>
     <div class="buttons">
@@ -41,28 +44,35 @@ use OrganizacaoTarefas\model\Tarefa;
     </div>
   </form>
    <?php
-    session_start();
+
+if($_POST){
+
     try{
+        $tarefa = $_POST['tarefa'];
+        $prioridade = $_POST['prioridade'];
+        $prazo = $_POST['prazo'];
+        $lembrete = $_POST['lembrete'];
+        $usuarioLogado = $_SESSION['usuarioLogado'];
 
-      $tarefa =$_POST['tarefa'];
-      $prioridade =$_POST['prioridade'];
-      $prazo =$_POST['prazo'];
-      $lembrete =$_POST['lembrete'];
+        $entradaTarefa = new Tarefa(
+                                    $tarefa,
+                                    $prioridade,
+                                    $prazo,
+                                    $lembrete,
+                                    $usuarioLogado->codigo
+        );
 
-      $entradaTarefa =  new Tarefa($tarefa,$prioridade,$prazo,$lembrete);
-      $_SESSION['tarefas'][] = $entradaTarefa;
+        $_SESSION['tarefas'][] = $entradaTarefa;
 
-      
-    }catch(Exception $erro){
-      echo "Algo deu errado!!!<br><br> $erro";
-    }
+        echo $entradaTarefa->imprimir();
 
-  ?>
+        }catch(Exception $erro){
 
-    <h3> 
-       <?php
-          echo $entradaTarefa->imprimir();
-        ?>
-    </h3>
+            echo "Algo deu errado!!! <br> $erro";
+
+        }
+
+  }
+?>
 </body>
 </html>
