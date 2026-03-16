@@ -69,6 +69,8 @@ if($loginValido){
 
 }
 
+
+
 }
 ?>
   <a href="cadastrarUsuario.php">Não tem um acesso? Cadastre-se...</a>

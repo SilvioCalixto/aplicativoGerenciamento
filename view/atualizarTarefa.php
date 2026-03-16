@@ -13,7 +13,6 @@ if(!isset($_GET['id'])){
     header("Location: consultarTarefa.php");
     exit;
 }
-
 $id = $_GET['id'];
 
 if(!isset($_SESSION['tarefas'][$id])){
@@ -60,11 +59,11 @@ if(isset($_POST['atualizar'])){
 <label>Prioridade:</label>
 <select name="prioridade">
 
-<option value="baixo" <?= $tarefa->prioridade == "baixo" ? "selected" : "" ?>>Baixo</option>
+<option value="baixo" <?= $tarefa->prioridade == "Baixo" ? "selected" : "" ?>>Baixo</option>
 
-<option value="medio" <?= $tarefa->prioridade == "medio" ? "selected" : "" ?>>Médio</option>
+<option value="medio" <?= $tarefa->prioridade == "Médio" ? "selected" : "" ?>>Médio</option>
 
-<option value="alto" <?= $tarefa->prioridade == "alto" ? "selected" : "" ?>>Alto</option>
+<option value="alto" <?= $tarefa->prioridade == "Alto" ? "selected" : "" ?>>Alto</option>
 
 </select>
 

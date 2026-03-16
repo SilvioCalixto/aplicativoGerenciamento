@@ -32,11 +32,11 @@ use OrganizacaoTarefas\model\Tarefa;
       <option value="alto">Alto</option>
     </select>
     <br>
-    <label>Quantos dias para a conclusão?: </label>
+    <label>Quando será sua tarefa?: </label>
     <input type="date" name="prazo" id="prazo">
     <br>
     <label>Quando gostaria de ser lembrado?: </label>
-    <input type="datetime-local" name="lembrete" id="lembrete">
+    <input type="date" name="lembrete" id="lembrete">
     <br>
     <div class="buttons">
       <button type="submit">Cadastrar</button>
@@ -71,8 +71,14 @@ if($_POST){
             echo "Algo deu errado!!! <br> $erro";
 
         }
-
+        if($lembrete == $prazo){
+          echo "<br><br><strong>Atenção a data da tarefa</strong>";
+        }
+      
   }
+
+  
+  
 ?>
 </body>
 </html>
