@@ -10,12 +10,18 @@
   <title>Menu</title>
 </head>
 <body>
-  <h1>Organize Suas Tarefas📝</h1>
-  <div class="container">
-  <button class="but"><a href="cadastrarTarefa.php">Cadastrar</a></button>
-  <button class="but"><a href="consultarTarefa.php">Gerenciar</a></button>
-  <button class="but"><a href="index.php">Desconectar</a></button>
-  </div>
+  <main>
+    <h1>Organize Suas Tarefas📝</h1>
+    <img src="../img/todoimg.webp" alt="Todo Image" height="400px" width="500px">
+    <div class="container">
+    <button class="but"><a href="cadastrarTarefa.php">Cadastrar</a></button>
+    <button class="but"><a href="consultarTarefa.php">Gerenciar</a></button>
+    <button class="but"><a href="index.php">Desconectar</a></button>
+    </div>
+  </main>
+  <footer>
+    Desenvolvido por <a href="https://github.com/Alysontrz" target="_blank">Alyson Santos</a> e <a href="https://github.com/SilvioCalixto" target="_blank">Silvio Calixto</a>
+  </footer>
   
 </body>
 </html>

@@ -18,44 +18,42 @@
 </head>
 <body>
 
-  <h1>Cadastrar Usuário</h1>
-  <form method="POST">
-      <label>Código: </label>
-      <input type="number" name="codigo" id="codigo">
-      <br>
-      <label>Nome: </label>
-      <input type="text" name="nome" id="nome">
-      <br>
-      <label>E-mail: </label>
-      <input type="email" name="email" id="email">
-      <br>
-      <label>Senha: </label>
-      <input type="password" name="senha" id="senha">
-      <br>
-      <div class="buttons">
-        <button type="submit">Cadastrar</button>
-        <button><a href="index.php">Voltar</a></button>
-      </div>
-  </form>
-  <?php
-
-      if($_POST){
-
-          $codigo = $_POST['codigo'];
-          $nome = $_POST['nome'];
-          $email = $_POST['email'];
-          $senha = $_POST['senha'];
-
-          $usuario = new Usuario($codigo,$nome,$email,$senha);
-
-          $_SESSION['usuarios'][] = $usuario;
-
-          echo $usuario->imprimir();
-
-      }
-
-?>
-
+  <main>
+    <h1>Cadastrar Usuário</h1>
+    <form method="POST">
+        <label>Código: </label>
+        <input type="number" name="codigo" id="codigo">
+        <br>
+        <label>Nome: </label>
+        <input type="text" name="nome" id="nome">
+        <br>
+        <label>E-mail: </label>
+        <input type="email" name="email" id="email">
+        <br>
+        <label>Senha: </label>
+        <input type="password" name="senha" id="senha">
+        <br>
+        <div class="buttons">
+          <button type="submit">Cadastrar</button>
+          <button><a href="index.php">Voltar</a></button>
+        </div>
+    </form>
+    <?php
+        if($_POST){
+            $codigo = $_POST['codigo'];
+            $nome = $_POST['nome'];
+            $email = $_POST['email'];
+            $senha = $_POST['senha'];
+            $usuario = new Usuario($codigo,$nome,$email,$senha);
+            $_SESSION['usuarios'][] = $usuario;
+            echo $usuario->imprimir();
+        }
+    
+    ?>
+  </main>
+  <footer>
+    Desenvolvido por <a href="https://github.com/Alysontrz" target="_blank">Alyson Santos</a> e <a href="https://github.com/SilvioCalixto" target="_blank">Silvio Calixto</a>
+  </footer>
 
   
 </body>

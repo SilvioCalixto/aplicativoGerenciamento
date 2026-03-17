@@ -44,47 +44,55 @@ if(isset($_POST['atualizar'])){
 <head>
 <meta charset="UTF-8">
 <title>Editar Tarefa</title>
+<link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
 
-<h1>Editar Tarefa</h1>
-
-<form method="POST">
-
-<label>Tarefa:</label>
-<input type="text" name="tarefa" value="<?= $tarefa->tarefa ?>">
-<br>
-
-<label>Prioridade:</label>
-<select name="prioridade">
-
-<option value="baixo" <?= $tarefa->prioridade == "Baixo" ? "selected" : "" ?>>Baixo</option>
-
-<option value="medio" <?= $tarefa->prioridade == "Médio" ? "selected" : "" ?>>Médio</option>
-
-<option value="alto" <?= $tarefa->prioridade == "Alto" ? "selected" : "" ?>>Alto</option>
-
-</select>
-
-<br>
-
-<label>Prazo:</label>
-<input type="date" name="prazo" value="<?= $tarefa->prazo ?>">
-<br>
-
-<label>Lembrete:</label>
-<input type="datetime-local" name="lembrete" value="<?= $tarefa->lembrete ?>">
-<br>
-
-<button type="submit" name="atualizar">Atualizar</button>
-<button type="submit" name="concluir">Concluir Tarefa</button>
-
-</form>
-
-<br>
-
-<a href="consultarTarefa.php">Voltar</a>
+<main>
+    <h1>Editar Tarefa</h1>
+    
+    <form method="POST">
+    
+    <label>Tarefa:</label>
+    <input type="text" name="tarefa" value="<?= $tarefa->tarefa ?>">
+    <br>
+    
+    <label>Prioridade:</label>
+    <select name="prioridade">
+    
+    <option value="baixo" <?= $tarefa->prioridade == "Baixo" ? "selected" : "" ?>>Baixo</option>
+    
+    <option value="medio" <?= $tarefa->prioridade == "Médio" ? "selected" : "" ?>>Médio</option>
+    
+    <option value="alto" <?= $tarefa->prioridade == "Alto" ? "selected" : "" ?>>Alto</option>
+    
+    </select>
+    
+    <br>
+    
+    <label>Prazo:</label>
+    <input type="date" name="prazo" value="<?= $tarefa->prazo ?>">
+    <br>
+    
+    <label>Lembrete:</label>
+    <input type="datetime-local" name="lembrete" value="<?= $tarefa->lembrete ?>">
+    <br>
+    
+    <div>
+        <button type="submit" name="atualizar">Atualizar</button>
+        <button type="submit" name="concluir">Concluir Tarefa</button>
+    </div>
+    
+    </form>
+    
+    <br>
+    
+    <button><a href="consultarTarefa.php">Voltar</a></button>
+  </main>
+  <footer>
+    Desenvolvido por <a href="https://github.com/Alysontrz" target="_blank">Alyson Santos</a> e <a href="https://github.com/SilvioCalixto" target="_blank">Silvio Calixto</a>
+  </footer>
 
 </body>
 </html>
