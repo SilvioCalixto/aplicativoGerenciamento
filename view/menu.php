@@ -10,7 +10,7 @@
   <title>Menu</title>
 </head>
 <body>
-  <main>
+  <main class="main">
     <h1>Organize Suas Tarefas📝</h1>
     <img src="../img/todoimg.webp" alt="Todo Image" height="400px" width="500px">
     <div class="container">
@@ -19,7 +19,7 @@
     <button class="but"><a href="index.php">Desconectar</a></button>
     </div>
   </main>
-  <footer>
+  <footer class="footer">
     Desenvolvido por <a href="https://github.com/SilvioCalixto" target="_blank">Silvio Calixto</a>
   </footer>
   

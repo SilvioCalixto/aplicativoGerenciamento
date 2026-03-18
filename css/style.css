@@ -14,6 +14,10 @@ main {
   font-style: normal
 }
 
+.main {
+  background-color: #efe4c9;
+}
+
 h1 {
   font-size: 53px;
   color: rgb(4, 113, 255);
@@ -96,3 +100,7 @@ footer {
   height: 40px;
   text-align: center;
 }
+
+.footer {
+    background-color: #efe4c9;
+  }
