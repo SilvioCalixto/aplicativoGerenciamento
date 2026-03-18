@@ -28,7 +28,7 @@ use OrganizacaoTarefas\model\Usuario;
       $usuarioLogado = $_SESSION['usuarioLogado'];
       foreach ($_SESSION['tarefas'] as $indice => $tarefa) {
         if ($tarefa->usuarioCodigo == $usuarioLogado->codigo) {
-          echo "<div style='border:1px solid #ccc; padding:10px; margin:0px; height:auto;width:300px'>";
+          echo "<div style='border:1px solid #ccc; padding:10px; margin:0px; height:auto;width:300px;background-color:aqua;' >";
           echo $tarefa->imprimir();
           echo "</div>";
           echo "<div><a href='atualizarTarefa.php?id=$indice'>Editar</a>";
@@ -45,7 +45,7 @@ use OrganizacaoTarefas\model\Usuario;
     <button><a href="menu.php">Voltar</a></button>
   </main>
   <footer>
-    Desenvolvido por <a href="https://github.com/Alysontrz" target="_blank">Alyson Santos</a> e <a href="https://github.com/SilvioCalixto" target="_blank">Silvio Calixto</a>
+    Desenvolvido por <a href="https://github.com/SilvioCalixto" target="_blank">Silvio Calixto</a>
   </footer>
 
 </body>

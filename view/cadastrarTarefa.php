@@ -83,7 +83,7 @@ use OrganizacaoTarefas\model\Tarefa;
   ?>
   </main>
   <footer>
-    Desenvolvido por <a href="https://github.com/Alysontrz" target="_blank">Alyson Santos</a> e <a href="https://github.com/SilvioCalixto" target="_blank">Silvio Calixto</a>
+    Desenvolvido por <a href="https://github.com/SilvioCalixto" target="_blank">Silvio Calixto</a>
   </footer>
 </body>
 </html>
